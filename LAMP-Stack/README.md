@@ -70,8 +70,10 @@ sudo systemctl status apache2
 ```
 <img width="706" height="246" alt="rule 4" src="https://github.com/user-attachments/assets/2a50c1b3-d770-4e04-8bd5-b53648576c6a" />
 
+
 ✅ Verify by visiting `http://<Public-IP>:80` in your browser.
 <img width="924" height="420" alt="rule 5" src="https://github.com/user-attachments/assets/1fe5cebb-34f7-4a7a-a51f-6172a0972b07" />
+
 
 ---
 
@@ -84,7 +86,9 @@ sudo mysql
 ```
 <img width="688" height="203" alt="rule 6" src="https://github.com/user-attachments/assets/381bf3bb-2f47-4569-ab92-017facc23bef" />
 
+
 Set a password and secure MySQL:
+
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; 
@@ -167,7 +171,7 @@ Check in browser:
 http://<Public-IP>:80
 # Replace Public-IP with your public IP address
 ```
-Expected result:
+
 <img width="563" height="125" alt="saved" src="https://github.com/user-attachments/assets/668954b7-1e3a-44e6-b773-f4338f561472" />
 
 ---
@@ -217,6 +221,7 @@ sudo rm /var/www/projectlamp/index.php
 ```
 
 At this point, your LAMP stack is fully installed and ready for hosting web applications.
+
 
 
 
