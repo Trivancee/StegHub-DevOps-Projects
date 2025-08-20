@@ -44,10 +44,10 @@ Some of the technologies I’ll be using throughout this journey include:
 ## 🤝 Connect with Me
 I’m always open to feedback, collaboration, and connecting with fellow engineers!  
 
-- **LinkedIn:** https://www.linkedin.com/in/ogechiegbodo/
-- **GitHub:** https://github.com/Trivancee
-- **Medium:** https://medium.com/@oge_
-- **Email:** gracetheogeeh@gmail.com
+- **LinkedIn:** [Ogechi Egbodo](https://www.linkedin.com/in/ogechiegbodo/)  
+- **GitHub:** [Trivancee](https://github.com/Trivancee)  
+- **Medium:** [@oge_](https://medium.com/@oge_)  
+- **Email:** [gracetheogeeh@gmail.com](mailto:gracetheogeeh@gmail.com) 
 
 ---
 
