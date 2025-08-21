@@ -41,7 +41,7 @@ Visual Studio Code (VS Code): The primary code editor and SSH client integration
 -  **SSH (port 22)** from your IP.
 -  **HTTP (port 80)** from anywhere.
 5. Launch the instance. 
-<img width="770" height="126" alt="Server" src="https://github.com/user-attachments/assets/2b0d75a7-ca5d-48a4-b1f3-98ef5d0bc682" />
+<img width="766" height="142" alt="Ubuntu Server" src="https://github.com/user-attachments/assets/55fa513d-d974-4423-8ea1-4d78102e878d" />
 
 
 ---
@@ -54,7 +54,7 @@ cd Downloads
 ssh -i <private-key-name>.pem ubuntu@<Public-IP-address>
 #Replace <private-key-name> with your key name and replace <Public-IP-address> with your instance's public IP address. 
 ```
-<img width="711" height="382" alt="rule 2" src="https://github.com/user-attachments/assets/6f40fc36-c45c-498d-90cc-0546e34771e9" />
+<img width="1421" height="763" alt="image (1)" src="https://github.com/user-attachments/assets/8a517406-a13b-4ea5-a96c-8bae58786d13" />
 
 ---
 
@@ -68,11 +68,11 @@ sudo apt install apache2 -y
 sudo systemctl status apache2
 # Checks the status of the Apache service to confirm it is running.
 ```
-<img width="706" height="246" alt="rule 4" src="https://github.com/user-attachments/assets/2a50c1b3-d770-4e04-8bd5-b53648576c6a" />
+<img width="1412" height="491" alt="image (2)" src="https://github.com/user-attachments/assets/eda4ec7c-31ef-4b26-bb21-8d5f0ac1ef20" />
 
 
-✅ Verify by visiting `http://<Public-IP>:80` in your browser.
-<img width="924" height="420" alt="rule 5" src="https://github.com/user-attachments/assets/1fe5cebb-34f7-4a7a-a51f-6172a0972b07" />
+#### ✅ Verify by visiting `http://<Public-IP>:80` in your browser.
+<img width="924" height="420" alt="apache2 default page" src="https://github.com/user-attachments/assets/1fe5cebb-34f7-4a7a-a51f-6172a0972b07" />
 
 
 ---
@@ -84,7 +84,7 @@ sudo apt install mysql-server
 
 sudo mysql
 ```
-<img width="688" height="203" alt="rule 6" src="https://github.com/user-attachments/assets/381bf3bb-2f47-4569-ab92-017facc23bef" />
+<img width="688" height="203" alt="mysql" src="https://github.com/user-attachments/assets/381bf3bb-2f47-4569-ab92-017facc23bef" />
 
 
 Set a password and secure MySQL:
@@ -110,7 +110,7 @@ sudo apt install php libapache2-mod-php php-mysql
 php -v
 # Verifies PHP installation.
 ```
-<img width="478" height="146" alt="rule 7" src="https://github.com/user-attachments/assets/770cb574-0ffc-4e9c-9d86-2edea1b95471" />
+<img width="478" height="146" alt="PHP installed" src="https://github.com/user-attachments/assets/770cb574-0ffc-4e9c-9d86-2edea1b95471" />
 
 
 ---
@@ -172,7 +172,7 @@ http://<Public-IP>:80
 # Replace Public-IP with your public IP address
 ```
 
-<img width="563" height="125" alt="saved" src="https://github.com/user-attachments/assets/668954b7-1e3a-44e6-b773-f4338f561472" />
+<img width="563" height="125" alt="Hello LAMP" src="https://github.com/user-attachments/assets/668954b7-1e3a-44e6-b773-f4338f561472" />
 
 ---
 
@@ -221,6 +221,7 @@ sudo rm /var/www/projectlamp/index.php
 ```
 
 At this point, your LAMP stack is fully installed and ready for hosting web applications.
+
 
 
 
