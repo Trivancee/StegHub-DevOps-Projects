@@ -1,7 +1,6 @@
 # DevOps & Cloud Projects
 
-Welcome to my DevOps & Cloud Journey. This repository contains a curated collection of hands-on projects, real-world solutions, and experiments with modern infrastructure.  
-This repository documents my growth throughout the **StegHub Scholarship Program**, showcasing practical implementations of DevOps practices and cloud engineering concepts.  
+Welcome to my DevOps & Cloud Journey. This repository contains a curated collection of hands-on projects, real-world solutions, and experiments with modern infrastructure. This repository documents my growth throughout the **StegHub Scholarship Program**, showcasing practical implementations of DevOps practices and cloud engineering concepts.  
 
 ---
 
