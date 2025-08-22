@@ -19,8 +19,8 @@ These components work together to deliver dynamic web applications.
   - **Port 22 (SSH):** For secure access  
   - **Port 80 (HTTP):** To serve web traffic  
 - SSH key pair for authentication  
-- GitHub for central repository for version control and project documentation 
-Visual Studio Code (VS Code): The primary code editor and SSH client integration 
+- GitHub for a central repository for version control and project documentation 
+- Visual Studio Code (VS Code): The primary code editor and SSH client integration 
 - A browser to test web responses  
 
 ---
@@ -221,6 +221,7 @@ sudo rm /var/www/projectlamp/index.php
 ```
 
 At this point, your LAMP stack is fully installed and ready for hosting web applications.
+
 
 
 
