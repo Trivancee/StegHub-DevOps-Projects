@@ -31,8 +31,8 @@ These components work together to deliver dynamic web applications.
 1. Log into your AWS Management Console and navigate to EC2 → Launch Instance.
 2. Set the following configurations:
 - Instance Name: My LAMP Stack Server
-- AMI: Ubuntu Server 22.04 LTS (64-bit x86/ARM)
-- Instance Type: t2.micro (Free Tier eligible)
+- AMI: Ubuntu Server 24.04 LTS (64-bit x86/ARM)
+- Instance Type: t3.micro (Free Tier eligible)
 3. Create or select an existing key pair:
 - If creating a new key pair, give it a name eg,: StegHubserver-keypair (this key will be saved in your downloads)
 4. Configure networking:
@@ -221,6 +221,7 @@ sudo rm /var/www/projectlamp/index.php
 ```
 
 At this point, your LAMP stack is fully installed and ready for hosting web applications.
+
 
 
 
