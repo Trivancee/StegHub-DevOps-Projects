@@ -1,6 +1,6 @@
 ﻿#  Deploying a LAMP stack website in AWS Cloud
 
-This project demonstrates how to deploy a **LAMP stack** (Linux, Apache, MySQL, PHP) on an AWS EC2 Ubuntu 22.04 instance.  
+This project demonstrates how to deploy a **LAMP stack** (Linux, Apache, MySQL, PHP) on an AWS EC2 Ubuntu 24.04 instance.  
 
 ## 📌 Introduction
 
@@ -14,7 +14,7 @@ These components work together to deliver dynamic web applications.
 
 ##  Project Prerequisites
 
-- AWS EC2 instance: Ubuntu 22.04 LTS (t3.micro – Free Tier)  
+- AWS EC2 instance: Ubuntu 24.04 LTS (t3.micro – Free Tier)  
 - Security group rules:
   - **Port 22 (SSH):** For secure access  
   - **Port 80 (HTTP):** To serve web traffic  
@@ -221,6 +221,7 @@ sudo rm /var/www/projectlamp/index.php
 ```
 
 At this point, your LAMP stack is fully installed and ready for hosting web applications.
+
 
 
 
