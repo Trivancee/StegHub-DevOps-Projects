@@ -6,7 +6,7 @@ This project demonstrates the deployment of a LEMP stack (Linux, Nginx, MySQL, P
 
 ## 📌 Project Prerequisites
 
-- **AWS EC2 instance**: Ubuntu 22.04 LTS (t3.micro Free Tier)
+- **AWS EC2 instance**: Ubuntu 24.04 LTS (t3.micro Free Tier)
 - **Security Group**: Inbound rules for  
   - Port 22 → SSH access  
   - Port 80 → HTTP web traffic  
@@ -287,3 +287,4 @@ Save and Exit.
 <img width="584" height="200" alt="To do list" src="https://github.com/user-attachments/assets/d97b29ed-508b-4f97-b154-d0f9daa15a0b" />
 
 With this guide, you’ve successfully set up a LEMP stack on AWS.
+
