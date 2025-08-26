@@ -21,8 +21,7 @@ This project demonstrates the deployment of a LEMP stack (Linux, Nginx, MySQL, P
 ##  Step 1: Install Nginx Web Server
 - SSH into the EC2 instance:
 ```bash
-ssh -i /c/Users/USER/OneDrive/Documents/Server-ssh-keys/Steghubkey.pem ubuntu@13.60.49.128
-#ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
+ssh -i /c/Users/USER/OneDrive/Documents/<Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
 ```
 
 - Update and install Nginx:
@@ -287,4 +286,5 @@ Save and Exit.
 <img width="584" height="200" alt="To do list" src="https://github.com/user-attachments/assets/d97b29ed-508b-4f97-b154-d0f9daa15a0b" />
 
 With this guide, you’ve successfully set up a LEMP stack on AWS.
+
 
