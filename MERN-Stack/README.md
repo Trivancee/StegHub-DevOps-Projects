@@ -14,11 +14,10 @@ It’s a full-stack project showcasing how the **frontend (React)** communicates
 
 This project leverages the four core technologies of the MERN stack:
 
-**MongoDB**:  A NoSQL, document-based database that stores tasks as documents.
-**Express.js**: A minimal web application framework for Node.js that simplifies routing and API development.
-
-**React.js**: A frontend JavaScript library for building dynamic and reusable UI components.
-**Node.js**: A JavaScript runtime that executes code on the server side.
+- **MongoDB**:  A NoSQL, document-based database that stores tasks as documents.
+- **Express.js**: A minimal web application framework for Node.js that simplifies routing and API development.
+- **React.js**: A frontend JavaScript library for building dynamic and reusable UI components.
+- **Node.js**: A JavaScript runtime that executes code on the server side.
 
 Together, these technologies create a modern, scalable full-stack web application.
 
@@ -845,6 +844,7 @@ This project demonstrates a complete MERN stack workflow:
 - Deploying on AWS
 
 This project is a practical introduction to building scalable full-stack applications and forms a strong foundation for more complex projects.
+
 
 
 
