@@ -1,4 +1,4 @@
-﻿# DEPLOYING A MERN STACK TODO APPLICATION
+﻿# BUILDING A MERN STACK TO-DO APPLICATION
 
 This project is a simple yet powerful To-Do application built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js).
 
@@ -844,6 +844,7 @@ This project demonstrates a complete MERN stack workflow:
 - Deploying on AWS
 
 This project is a practical introduction to building scalable full-stack applications and forms a strong foundation for more complex projects.
+
 
 
 
