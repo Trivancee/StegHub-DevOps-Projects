@@ -73,15 +73,17 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 ```
 
-4. Verify status of MongodDB:
+4. Verify the status of MongodDB:
 ```bash
 sudo systemctl status mongod
 ```
+<img width="544" height="145" alt="Mongod Running" src="https://github.com/user-attachments/assets/822ee467-7615-4bb2-9e07-90a8b2f5a48e" />
 
 5. Install body-parser:
 ```bash
 sudo npm install body-parser
 ```
+---
 
 ## ⚙️ Step 3: Create the Project Folder and File
 
@@ -92,6 +94,7 @@ mkdir Books && cd Books
 npm init
 ```
 - Click on Enter until all details are displayed:
+<img width="859" height="577" alt="books mean stack" src="https://github.com/user-attachments/assets/f9054785-4ad9-46bd-a7e2-6714a3c35927" />
 
 2. Create the server entry file:
 ```bash
@@ -125,9 +128,10 @@ app.listen(PORT, () => {
   console.log(`Server up: http://localhost:${PORT}`);
 });
 ```
+---
 
 ## ⚙️ Step 4: Install Express and set up Routes to the server
-Express.js provides the backend framework for handling API requests, while Mongoose manages interactions with MongoDB and body-parser enables parsing of incoming JSON data in requests. These dependencies form the backbone of the server logic for the application.
+Express.js provides the backend framework for handling API requests, while Mongoose manages interactions with MongoDB and body-parser enables parsing of incoming JSON data in requests.
 
 1. Install Dependencies:
 ```bash
@@ -216,6 +220,7 @@ const bookSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Book', bookSchema);
 ```
+---
 
 ## ⚙️ Step 5: Access the Routes with AngularJS
 AngularJS powers the frontend of the application, allowing users to interact with the backend routes through a dynamic interface. It sends HTTP requests to the Express server to add, fetch, and delete books, and updates the user interface in real time without requiring a page reload.
@@ -357,24 +362,29 @@ cd ..
 
 node server.js
 ```
-The server is now up and running, and we can connect to it via port 3300.
+<img width="1279" height="423" alt="Server 3300" src="https://github.com/user-attachments/assets/4f20b3fd-9395-4774-9f12-881c71938d52" />
+**The server is now up and running, and we can connect to it via port 3300**.
 
 - You can launch a separate SSH console to test what the curl command returns locally:
 ```bash
 curl -s http://localhost:3300
 ```
+<img width="550" height="418" alt="curl result" src="https://github.com/user-attachments/assets/d328c8eb-9196-4b19-b3ac-618e58c0b2be" />
 
 4. Open TCP port 3300 in your EC2 Instance
-
+<img width="828" height="124" alt="inbound rule 2" src="https://github.com/user-attachments/assets/30a93325-f566-433f-b34a-9a363b3e59db" />
 
 - Access the Book Register web application from your browser using your Public IP address or the Public DNS name:
+<img width="845" height="375" alt="Book management" src="https://github.com/user-attachments/assets/6cf3e05d-668f-45e7-bd2d-81d9ac2b4d9e" />
 
+---
 
 # ❌ Trobleshooting
 1. MongoDB-org failed to install
+<img width="1854" height="996" alt="Debugging MEAN 1" src="https://github.com/user-attachments/assets/3fcb5e75-3609-48b5-a609-9f105da6b157" />
 
 
-This installation failed because I didn’t import the MongoDB GPG key which was missing and thus the repo wasn’t properly authenticated.
+This installation failed because I didn’t import the MongoDB GPG key, and thus the repo wasn’t properly authenticated.
 
 **To Fix This**:
 - Import the MongoDB GPG key:
@@ -405,6 +415,7 @@ sudo systemctl status mongod
 ---
 
 2. 'sudo apt install -y npm', Failed
+<img width="1084" height="474" alt="Install npm failed" src="https://github.com/user-attachments/assets/51353728-bcfc-43e8-8ba6-72d82b1036ca" />
 
 **To Fix This**:
 - Remove the old Node.js / npm packages and update:
@@ -425,7 +436,8 @@ npm -v
 
 ---
 
-2. Missing Parameter after running 'node server.js'
+3. Missing Parameter after running 'node server.js'
+<img width="1371" height="532" alt="Missing parameter" src="https://github.com/user-attachments/assets/6d9d85e3-5e68-40b8-9285-29d2cf12b013" />
 
 The error occurred after running 'node server.js' because Express was installed with 'sudo npm install express mongoose', which pulled in Express 5.x by default. Express 5 uses the **path-to-regexp** package with stricter parsing rules, so one of the route paths was considered invalid and caused the application to crash.
 
@@ -440,7 +452,14 @@ This resolves the **path-to-regexp** error and allows the application to run wit
 ```bash
 node server.js
 ```
+<img width="1279" height="423" alt="Server 3300" src="https://github.com/user-attachments/assets/d5d6dced-3ca3-4a72-b081-d99507fc0788" />
 
 ## Lessons Learned
 - MongoDB installation on Ubuntu requires GPG keys to be properly added.
 - Always check Express version (stick to v4 for stability).
+
+---
+
+# 🏁 Conclusion
+
+By following these steps, we successfully built and deployed a Simple Web Book Register Application using the MEAN stack on an Ubuntu server in AWS. The application demonstrates how backend APIs (Node.js, Express, MongoDB) and a frontend framework (AngularJS) work together to create a functional full-stack solution. This project not only highlights the deployment process but also reinforces practical debugging and problem-solving skills essential for real-world DevOps and software development.
