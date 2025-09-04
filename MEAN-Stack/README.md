@@ -377,6 +377,7 @@ curl -s http://localhost:3300
 - Access the Book Register web application from your browser using your Public IP address or the Public DNS name:
 <img width="845" height="375" alt="Book management" src="https://github.com/user-attachments/assets/6cf3e05d-668f-45e7-bd2d-81d9ac2b4d9e" />
 
+By following these steps, we successfully built and deployed a Simple Web Book Register Application using the MEAN stack on an Ubuntu server in AWS. The application demonstrates how backend APIs (Node.js, Express, MongoDB) and a frontend framework (AngularJS) work together to create a functional full-stack solution.
 ---
 
 # ❌ Trobleshooting
@@ -462,4 +463,4 @@ node server.js
 
 # 🏁 Conclusion
 
-By following these steps, we successfully built and deployed a Simple Web Book Register Application using the MEAN stack on an Ubuntu server in AWS. The application demonstrates how backend APIs (Node.js, Express, MongoDB) and a frontend framework (AngularJS) work together to create a functional full-stack solution. This project not only highlights the deployment process but also reinforces practical debugging and problem-solving skills essential for real-world DevOps and software development.
+This project not only highlights the deployment process but also reinforces practical debugging and problem-solving skills essential for real-world DevOps and software development.
