@@ -1,6 +1,6 @@
 # 🖥️ Implementing a Client-Server Architecture using MySQL
 
-This project demonstrates how to implement a **Client-Server Architecture** using **MySQL** on AWS EC2 instances. Client-Server refers to an architecture where two or more computers communicate over a network.  
+This project demonstrates how to implement a **Client-Server Architecture** using **MySQL** on AWS EC2 instances. Client-server refers to an architecture where two or more computers communicate over a network.  
 - The **Client** sends requests.  
 - The **Server** responds to those requests. 
 
@@ -26,6 +26,7 @@ In this setup:
   - Allow **SSH (22)** → from your IP (for management).
   - Allow **MySQL (3306)** → from the **Client instance private IP** only.
 - SSH key pair for authentication.  
+<img width="940" height="102" alt="MySQL Server and Client Instances" src="https://github.com/user-attachments/assets/62a0d2bc-8318-4c6a-ad2c-18306a0b9b78" />
 
 ---
 
@@ -36,7 +37,7 @@ In this setup:
 - Configure Security Group to allow:
   - Port 22 (TCP) → SSH access from your IP
   - Port 3306 (TCP) → MySQL access from the Client’s private IP.  
-
+<img width="1536" height="400" alt="Inbound Rules" src="https://github.com/user-attachments/assets/96cf1a37-f295-496c-872d-96010ccea1f2" />
 
 ---
 
@@ -70,6 +71,7 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 bind-address = 0.0.0.0
 ```
 This allows MySQL to accept connections from any IP address, not just localhost.
+<img width="1098" height="595" alt="Bind Address" src="https://github.com/user-attachments/assets/40106ef8-e93a-4318-b82d-cc3122af9dbc" />
 
 2. Restart MySQL to apply changes:
 ```bash
@@ -93,6 +95,7 @@ FLUSH PRIVILEGES;
 
 EXIT;
 ```
+<img width="1036" height="327" alt="Creating remote user" src="https://github.com/user-attachments/assets/b2a49027-fdf1-4f9e-a252-6361d001bb54" />
 
 **Note**:
 - Replace 'remote_user' with your desired remote username
@@ -126,18 +129,20 @@ mysql --version
 ```bash
 mysql -u remote_user -p -h <server-private-ip>
 ```
+<img width="1080" height="349" alt="MySQL login successful" src="https://github.com/user-attachments/assets/6b1da34b-8024-464c-8fe7-577b63dac2a6" />
 
 2. Test the Connection:
 ```bash
 SHOW DATABASES;
 ```
+<img width="736" height="300" alt="Database" src="https://github.com/user-attachments/assets/08cfedc4-517e-4722-b3eb-ec3376c55924" />
 
 
 ### 🎯 At this point:
 
-✅ You have a **Client-Server Architecture** working with MySQL.
-✅ The client can connect remotely to the server without SSH.
-✅ You’ve restricted access securely (only the client server private IP address is allowed).
+- You have a **Client-Server Architecture** working with MySQL.
+- The client can connect remotely to the server without SSH.
+- You’ve restricted access securely (only the client server private IP address is allowed).
 
 ---
 
@@ -154,6 +159,8 @@ CREATE DATABASE Steg_Technology_Hub;
 
 USE Steg_Technology_Hub;
 ```
+<img width="840" height="301" alt="Steghub database" src="https://github.com/user-attachments/assets/7a7b21a1-7e53-455c-b67b-29eea9edf4c5" />
+
 
 2. Create a table (for this practical, let’s create an employee table):
 ```bash
@@ -173,6 +180,8 @@ VALUES
 ('Trivancy Media', 'Designer', 68000.00),
 ('Grace Nancy', 'Manager', 95000.00);
 ```
+<img width="892" height="474" alt="Basic database operation" src="https://github.com/user-attachments/assets/31e516ba-193a-4007-8c3b-cc68dd3417ba" />
+
 
 3. Query data:
 ```bash
@@ -182,6 +191,8 @@ SELECT * FROM employees;
 SELECT name, salary FROM employees WHERE role = 'Developer';
 # To filter data
 ```
+<img width="960" height="462" alt="Quering Database" src="https://github.com/user-attachments/assets/c8a6fe07-1b47-4316-91d6-79f6b5a49cf4" />
+
 
 4. Update data:
 ```bash
@@ -200,17 +211,15 @@ DROP TABLE employees;
 DROP DATABASE Steg_Technology_Hub
 ```
 
-🎯 ### At this point:
+### 🎯 At this point:
 
-✅ Created a **database**
-✅ Created a **table**
-✅ Inserted **records**
-✅ Queried (retrieved) data
-✅ Dropped and deleted structures
+- Created a **database**
+- Created a **table**
+- Inserted **records**
+- Queried (retrieved) data
+- Dropped and deleted structures
+
 That’s a complete cycle of **basic DB operations**
-
-
----
 
 # Conclusion
 
