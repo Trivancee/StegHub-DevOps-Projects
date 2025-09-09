@@ -39,7 +39,6 @@ In this setup:
   - Port 3306 (TCP) → MySQL access from the Client’s private IP.  
 <img width="1536" height="400" alt="Inbound Rules" src="https://github.com/user-attachments/assets/96cf1a37-f295-496c-872d-96010ccea1f2" />
 
----
 
 ## ⚙️ Step 2: Install MySQL on the Server
 
@@ -58,7 +57,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install mysql-server -y
 ```
 
----
 
 ## ⚙️ Step 3: Configure MySQL Server for Remote Access
 
@@ -79,7 +77,6 @@ sudo systemctl restart mysql
 # To apply the configuration changes
 ```
 
----
 
 ## ⚙️ Step 4: Create a Remote MySQL User
 
@@ -102,7 +99,6 @@ EXIT;
 - Replace '<client-private-ip>' with the client instance private IP
 - Replace 'PassWord123!' with your unique password
 
----
 
 ## ⚙️ Step 5: Install MySQL Client on Client Instance
 
@@ -121,7 +117,6 @@ mysql --version
 # To verify the installation
 ```
 
----
 
 ## ⚙️ Step 6: Connect from MySQL Client to MySQL Server
 
