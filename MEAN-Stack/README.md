@@ -18,7 +18,7 @@ This project is a **Simple Web Book Register Application** built with the **MEAN
 
 ---
 
-## ⚙️ Step 1: Install NodeJs
+### ⚙️ Step 1: Install NodeJs
 1. Connect to EC2
 ```bash
 ssh -i <your-private-key.pem> ubuntu@<EC2-Public-IP>
