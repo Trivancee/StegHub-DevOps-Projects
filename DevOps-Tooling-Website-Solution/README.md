@@ -525,6 +525,7 @@ At this point, our project has been successfully completed. The LAMP stack web s
 # 🧰 Troubleshooting
 
 **PROBLEM: Database Server Rejected Connection from Web Server** 
+
 While setting up the connection between the Web Server and the Database Server, the web application failed to connect to MySQL. The error message indicated that the MySQL user webaccess was not allowed to connect from the host (the web server’s private IP)
 
 <img width="1774" height="369" alt="Database error" src="https://github.com/user-attachments/assets/e08844b8-d04d-4dcd-bd8b-935130c6786b" />
