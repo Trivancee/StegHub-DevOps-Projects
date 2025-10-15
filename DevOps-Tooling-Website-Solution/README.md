@@ -1,4 +1,5 @@
-<img width="1098" height="595" alt="Bind Address" src="https://github.com/user-attachments/assets/0826e3b2-84ed-4c5c-9abc-b277b023fe2d" /># 🚀 DevOps Tooling Website Solution
+# 🚀 DevOps Tooling Website Solution
+
 
 ## Overview
 This project implements a DevOps Tooling Website Solution designed to make access to essential DevOps tools within a corporate infrastructure easily accessible and highly available. The setup demonstrates how **multiple web servers** share application data and connect to a **single database** using a **Network File System (NFS)** for shared storage, following an enterprise-style three-tier architecture:
@@ -48,6 +49,7 @@ This allows all servers to access identical web content and logs while maintaini
 1. Launch an EC2 instance with RHEL 9 (Red Hat Enterprise Linux) Operating System.
 - Configure Security Group to allow:
     - Port 22 → SSH access for management
+  
 <img width="671" height="90" alt="NFS Server" src="https://github.com/user-attachments/assets/b3d02786-6772-4963-ae92-39b03cde27e9" />
 
 2. Create three EBS volumes (each 10GB) in the same Availability Zone as your instance, and attach each volume one at a time to your RHEL 9 EC2 instance.
@@ -64,16 +66,17 @@ ssh -i <Your-private-key.pem> ec2-user@<EC2-Public-IP-address>
 lsblk
 ```
 <img width="779" height="303" alt="image (5)" src="https://github.com/user-attachments/assets/bdddc383-8d5a-4aed-b6d3-715636f86ffe" />
+
 *This image shows that the Root Disk is 'nvme0n1' , and the 3 attached volumes are `nvme1n1, nvme2n1 and nvme3n1`*
 
 - Partition each of the disks using `fdisk`:
 
 **NOTE**: At the `Command (m for help):` prompt, type the following:
 
-a. **g** → to create a new GPT partition table
-b. **n** → add a new partition
+- **g** → to create a new GPT partition table
+- **n** → add a new partition
     - Press **Enter** to accept defaults for **partition number, first sector, and last sector**.
-c. **w** → write the changes to disk and exit.
+- **w** → write the changes to disk and exit.
 
 ```bash
 sudo fdisk /dev/nvme1n1
@@ -91,6 +94,7 @@ sudo fdisk /dev/nvme3n1
 lsblk
 ```
 <img width="745" height="313" alt="image (6)" src="https://github.com/user-attachments/assets/3f5394ea-55aa-4c98-bfca-05f7d81deec2" />
+
 *The new partitions can be easily identified by the p1 attached to each of them: `nvme1n1p1, nvme2n1p1 and nvme3n1p1`*
 
 
@@ -124,9 +128,9 @@ sudo vgs
 - Use `lvcreate` to create 3 logical volumes:
 
 **Note:**
-    a. **apps-lv → 9G** (for website files under `/var/www/html`).
-    b. **logs-lv → 9G** (for logs under `/var/log`)
-    c. **opt-lv → 9G** (for optional software and third-party applications under `/opt`)
+- **apps-lv → 9G** (for website files under `/var/www/html`).
+- **logs-lv → 9G** (for logs under `/var/log`)
+- **opt-lv → 9G** (for optional software and third-party applications under `/opt`)
     
 ```bash
 sudo lvcreate -n apps-lv -L 9G nfs-vg
@@ -518,13 +522,12 @@ At this point, our project has been successfully completed. The LAMP stack web s
 
 
 
-## 🧰 Troubleshooting
+# 🧰 Troubleshooting
 
 **PROBLEM: Database Server Rejected Connection from Web Server** 
+While setting up the connection between the Web Server and the Database Server, the web application failed to connect to MySQL. The error message indicated that the MySQL user webaccess was not allowed to connect from the host (the web server’s private IP)
 
 <img width="1774" height="369" alt="Database error" src="https://github.com/user-attachments/assets/e08844b8-d04d-4dcd-bd8b-935130c6786b" />
-
-While setting up the connection between the Web Server and the Database Server, the web application failed to connect to MySQL. The error message indicated that the MySQL user webaccess was not allowed to connect from the host (the web server’s private IP)
 
 **CAUSE:** By default, MySQL restricts user access based on both the username and the host from which the connection originates.
 In my case, the user `webaccess` was created with permissions limited to my Database private IP address, meaning MySQL was rejecting any connections coming from a different machine (the web servers)
