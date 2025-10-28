@@ -27,8 +27,9 @@ In this project, Jenkins is configured to automatically pull code from a GitHub 
 
 <img width="706" height="64" alt="Jenkins SG" src="https://github.com/user-attachments/assets/1b34030e-adb0-49ad-bcce-85c9b7958cf3" />
 
+---
 
-2. SSH into the server then update and install dependencies:
+2. SSH into the server, then update and install dependencies:
 ```bash
 sudo apt update
 
@@ -63,6 +64,8 @@ sudo systemctl status jenkins
 
 <img width="796" height="159" alt="Jenkins running" src="https://github.com/user-attachments/assets/609f023b-f8df-4e16-9e1d-448d1830a423" />
 
+---
+
 
 3. Access Jenkins:
     - Open your browser and go to: **`http://<Jenkins-server-public-ip>:8080`**
@@ -72,6 +75,9 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 <img width="1682" height="1000" alt="Unlock Jenkins" src="https://github.com/user-attachments/assets/daba119c-7586-46e6-856a-cddb6a98b0e1" />
+
+---
+
 
 - Once you log in, select `Install Suggested Plugins` to install the Jenkins plugins
 - Create an admin user (Username, Password, Full name, and Email):
@@ -96,6 +102,8 @@ Enable Webhooks in your GitHub repository settings by following this guide:
 
 <img width="1191" height="826" alt="Image 2" src="https://github.com/user-attachments/assets/3c479cf1-3afb-4e64-9371-ded1c5e14a20" />
 
+---
+
 
 2. Go to Jenkins web console, click "**New Item**" and create a "**Freestyle project**"
 - Item Name: tooling_github
@@ -105,10 +113,14 @@ Enable Webhooks in your GitHub repository settings by following this guide:
 
 <img width="1650" height="870" alt="Image 3" src="https://github.com/user-attachments/assets/93523b8e-7493-426e-a4a4-a4a6321c7735" />
 
+---
+
 
 3. Go to your GitHub repository and copy your repository link. Mine is: [tooling](https://github.com/Trivancee/tooling). Note that my branch is **MAIN**, not master.
 
 <img width="1588" height="631" alt="Image 6" src="https://github.com/user-attachments/assets/30a8f7a2-0158-426a-8d70-ae70aebb1238" />
+
+---
 
 
 4. In the configuration of the Jenkins freestyle project, choose "Source code management" > "Git" → > (Paste the Git repository link copied earlier) > Click on "Add" (to add credentials like username/password) > **Save** credentials
@@ -119,12 +131,15 @@ Enable Webhooks in your GitHub repository settings by following this guide:
 
 <img width="907" height="432" alt="Image 4" src="https://github.com/user-attachments/assets/466ea41f-f429-4340-900d-85d75c5805fd" />
 
+---
 
 -  Click the "Build Now" button. If you have configured everything correctly, the build will be successful.
 
 <img width="1230" height="886" alt="step 7 Before" src="https://github.com/user-attachments/assets/849427d5-4b92-45a9-b95e-0d088b3777a5" />
 
 <img width="1377" height="715" alt="Image 8 After" src="https://github.com/user-attachments/assets/d2a944c1-0a4f-40a1-bb44-f839f81267a2" />
+
+---
 
 
 5. Configure for automated builds:
@@ -136,10 +151,14 @@ Enable Webhooks in your GitHub repository settings by following this guide:
 
 <img width="1644" height="738" alt="Image 9" src="https://github.com/user-attachments/assets/60e69603-6d43-4327-83ff-8212beaef2eb" />
 
+---
+
 
 6. Now, make a change to the Readme.md file of your GitHub repository (e.g., edit the README.MD file) and push it to the main branch. You will see that a new build has been launched automatically (by webhook), and you can see its results - artifacts, saved on the Jenkins server.
 
 <img width="1374" height="842" alt="Push Successful" src="https://github.com/user-attachments/assets/deae9b35-91c3-4b38-8644-2c64b3d2b872" />
+
+---
 
 
 *We have now configured an automated Jenkins job that receives files from GitHub by webhook trigger (this method is considered as 'push' because the changes are being 'pushed' and file transfer is initiated by GitHub).*
@@ -152,8 +171,10 @@ ls /var/lib/jenkins/jobs/tooling_github/builds/<build_number>/archive/
 
 <img width="1194" height="98" alt="image (5)" src="https://github.com/user-attachments/assets/0fcd0486-0c90-4b91-8ab0-91b795199a7a" />
 
+---
 
-# Step 3: Configure Jenkins to copy files to NFS server via SSH
+
+# Step 3: Configure Jenkins to copy files to the NFS server via SSH
 
 Now that we have our artifacts saved locally on the Jenkins server, let's set up Jenkins to copy them to our NFS server. We will use the "Publish Over SSH" plugin for this task.
 
@@ -162,6 +183,8 @@ Now that we have our artifacts saved locally on the Jenkins server, let's set up
 - Search for "Publish over SSH" and install it without restarting.
 
 <img width="1832" height="480" alt="Manage Jenkins" src="https://github.com/user-attachments/assets/ce18f3c8-f5fa-4c84-a210-42225ec6c548" />
+
+---
 
 
 2. Configure Jenkins to copy artifacts to the NFS server:
@@ -178,6 +201,8 @@ Now that we have our artifacts saved locally on the Jenkins server, let's set up
 
 <img width="1814" height="894" alt="Image 12" src="https://github.com/user-attachments/assets/06b71c3e-f924-4de2-80a1-e7d0583091b7" />
 
+---
+
 
 3. Open the Jenkins job/project configuration page and add another "Post-build Action”.
 - On the main dashboard, go to "Manage Jenkins (settings)" > "System"
@@ -190,6 +215,8 @@ Now that we have our artifacts saved locally on the Jenkins server, let's set up
 <img width="1351" height="811" alt="Image 13" src="https://github.com/user-attachments/assets/f0633e64-0221-48cb-95ce-f8fad6072fff" />
 
 <img width="1182" height="892" alt="Image 14" src="https://github.com/user-attachments/assets/f813fc1e-6541-48a5-b776-33235c384068" />
+
+---
 
 
 - Go ahead, change something in README.MD file in your GitHub Tooling repository.
@@ -222,6 +249,8 @@ This setup now automatically deploys your code changes from GitHub to your NFS s
 After setting up the **Publish Over SSH** plugin in Jenkins and configuring it to connect to the **NFS Server**, the build trigger from GitHub succeeded, but Jenkins logs showed this error:
 
 <img width="1632" height="864" alt="Permission denied" src="https://github.com/user-attachments/assets/274e2cfb-d24c-4055-89e3-6fb565d2fb37" />
+
+---
 
 
 ### 🧩 Root Cause
